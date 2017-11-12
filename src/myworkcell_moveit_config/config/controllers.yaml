@@ -1,0 +1,28 @@
+
+controller_list:
+  - name: ""
+    action_ns: joint_trajectory_action
+    type: FollowJointTrajectory
+    joints:
+      - right_j0
+      - right_j1
+      - right_j2
+      - right_j3
+      - right_j4
+      - right_j5
+      - right_j6
+
+# Likely to be used if working with actual hardware
+#controller_list:
+#  - name: /robot/limb/right
+#    action_ns: follow_joint_trajectory
+#    type: FollowJointTrajectory
+#    joints:
+#      - right_j0
+#      - right_j1
+#      - right_j2
+#      - right_j3
+#      - right_j4
+#      - right_j5
+#      - right_j6
+
