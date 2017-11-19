@@ -12,7 +12,7 @@ controller_list:
       - right_j5
       - right_j6
 
-# Likely to be used if working with actual hardware
+#####Likely to be used if working with actual hardware
 #controller_list:
 #  - name: /robot/limb/right
 #    action_ns: follow_joint_trajectory
