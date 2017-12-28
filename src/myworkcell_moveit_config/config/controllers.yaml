@@ -10,7 +10,15 @@ controller_list:
       - right_j4
       - right_j5
       - right_j6
-      - r_gripper_l_finger_joint
+#      - r_gripper_l_finger_joint
+#      - r_gripper_r_finger_joint
+#  - name: ""
+#    action_ns: gripper_action
+#    type: GripperCommand
+#    default: true
+#    joints:
+#      - r_gripper_l_finger_joint
+#      - r_gripper_r_finger_joint
 
 #####Likely to be used if working with actual hardware
 #controller_list:

@@ -8,4 +8,6 @@ controller_list:
       - right_j4
       - right_j5
       - right_j6
+  - name: fake_gripper_controller
+    joints:
       - r_gripper_l_finger_joint

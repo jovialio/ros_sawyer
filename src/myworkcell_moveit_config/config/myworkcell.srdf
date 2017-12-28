@@ -10,18 +10,32 @@
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
     <group name="manipulator">
-        <chain base_link="base" tip_link="r_gripper_l_finger_tip" />
+        <chain base_link="base" tip_link="right_electric_gripper_base" />
+    </group>
+    <group name="gripper">
+        <joint name="r_gripper_l_finger_joint" />
+        <joint name="r_gripper_r_finger_joint" />
     </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="Home" group="manipulator">
-        <joint name="right_j0" value="0.0335" />
+        <joint name="right_j0" value="0.8045" />
         <joint name="right_j1" value="-0.8682" />
         <joint name="right_j2" value="0.0334" />
         <joint name="right_j3" value="1.9401" />
         <joint name="right_j4" value="0" />
         <joint name="right_j5" value="0" />
-        <joint name="right_j6" value="0" />
+        <joint name="right_j6" value="0.1036" />
     </group_state>
+    <group_state name="Open" group="gripper">
+        <joint name="r_gripper_l_finger_joint" value="0.0208" />
+        <joint name="r_gripper_r_finger_joint" value="-0.0208" />
+    </group_state>
+    <group_state name="Close" group="gripper">
+        <joint name="r_gripper_l_finger_joint" value="0" />
+        <joint name="r_gripper_r_finger_joint" value="0" />
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="eef" parent_link="right_electric_gripper_base" group="gripper" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="FixedBase" type="fixed" parent_frame="world" child_link="world" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
@@ -79,7 +93,6 @@
     <disable_collisions link1="r_gripper_l_finger" link2="right_l4_2" reason="Never" />
     <disable_collisions link1="r_gripper_l_finger" link2="right_l5" reason="Never" />
     <disable_collisions link1="r_gripper_l_finger" link2="right_l6" reason="Never" />
-    <disable_collisions link1="r_gripper_l_finger" link2="torso" reason="Never" />
     <disable_collisions link1="r_gripper_l_finger_tip" link2="r_gripper_r_finger" reason="Never" />
     <disable_collisions link1="r_gripper_l_finger_tip" link2="r_gripper_r_finger_tip" reason="Never" />
     <disable_collisions link1="r_gripper_l_finger_tip" link2="right_connector_plate_base" reason="Never" />
@@ -103,7 +116,6 @@
     <disable_collisions link1="r_gripper_r_finger" link2="right_l4_2" reason="Never" />
     <disable_collisions link1="r_gripper_r_finger" link2="right_l5" reason="Never" />
     <disable_collisions link1="r_gripper_r_finger" link2="right_l6" reason="Never" />
-    <disable_collisions link1="r_gripper_r_finger" link2="torso" reason="Never" />
     <disable_collisions link1="r_gripper_r_finger_tip" link2="right_connector_plate_base" reason="Never" />
     <disable_collisions link1="r_gripper_r_finger_tip" link2="right_electric_gripper_base" reason="Never" />
     <disable_collisions link1="r_gripper_r_finger_tip" link2="right_hand" reason="Never" />

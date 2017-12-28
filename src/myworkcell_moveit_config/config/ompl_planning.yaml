@@ -145,3 +145,30 @@ manipulator:
     - LazyPRMstarkConfigDefault
     - SPARSkConfigDefault
     - SPARStwokConfigDefault
+gripper:
+  planner_configs:
+    - SBLkConfigDefault
+    - ESTkConfigDefault
+    - LBKPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - KPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - RRTstarkConfigDefault
+    - TRRTkConfigDefault
+    - PRMkConfigDefault
+    - PRMstarkConfigDefault
+    - FMTkConfigDefault
+    - BFMTkConfigDefault
+    - PDSTkConfigDefault
+    - STRIDEkConfigDefault
+    - BiTRRTkConfigDefault
+    - LBTRRTkConfigDefault
+    - BiESTkConfigDefault
+    - ProjESTkConfigDefault
+    - LazyPRMkConfigDefault
+    - LazyPRMstarkConfigDefault
+    - SPARSkConfigDefault
+    - SPARStwokConfigDefault
+  projection_evaluator: joints(r_gripper_l_finger_joint,r_gripper_r_finger_joint)
+  longest_valid_segment_fraction: 0.005
